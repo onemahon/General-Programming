@@ -1,0 +1,6 @@
+Using only a four-minute hourglass and a seven-minute hourglass, measure exactly nine minutes—without the process taking longer than nine minutes.
+
+--Correct answer:
+//Note: this problem appears to relate to, but isn't ACTUALLY an iteration of Euclid's algorithm.
+If you start with both hourglasses empty, turn them both. When the 4 minute one finishes, turn it again. When the 7 minutes one finishes, turn it. When the 4 minute one finishes, it has been 8 minutes, but the 7 minute one changed just 1 minute ago - so at 8 minutes, turn the 7 minute hourglass BACK over, and let it run back to empty. When that one finishes, it's been 9 minutes.
+

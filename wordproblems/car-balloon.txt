@@ -1,0 +1,10 @@
+You're in a car with a helium balloon on a string that is tied to the floor. The windows are closed. When you step on the gas pedal, what happens to the balloon - does it move forward, move backwat, or stay put?
+
+--Correct answer:
+The balloon will move forward. Because the balloon floats on top of the air, and the air moves to the back of the car as you accelerate forward, the balloon remains on top of the air by moving towards the front of the car.
+
+
+--My initial response:
+It depends on whether you're expecting the balloon to move forward relative to the car or something else. I had though that because the air in the car is all moving forward as well, the balloon would follow along and not move (relative to the car). Relative to the ground, however, the balloon would still be moving forward (becuase, duh, the car is moving forward).
+
+

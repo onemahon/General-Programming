@@ -1,0 +1,36 @@
+A book has N pages, numbered the usual way, from 1 to N. The total number of digits in the page numbers is 1,095. How many pages does the book have?
+
+--My thinking:
+Misinterpreted the question as thinking of a book that counts up to page N, which itself has 1,095 digits. Then it comes across as a question of what value 1,095 digits can represent - but that's just 10^1094, because 1 digit represents 10^1 values, 2 digits 10^2, etc...
+
+--Correct answer:
+Anyway, aside from my fairly obvious mistake, we're trying to count how many digits are TOTAL in the sequence of numbers from 1 to N. Actually, we know how many digits there are, so we need to determine backwards how high you have to count to make that the case.
+
+The first 9 pages count for 9 digits: 
+page:		1 2 3 4 5 6 7 8 9
+#ofdigits:	1 1 1 1 1 1 1 1 1
+total:		1 2 3 4 5 6 7 8 9
+
+The next 90 pages each have 2 digits:
+page: 		10 11 12 13 14 15 16 17 18 19
+#ofdigs:	2  2  2  2  2  2  2  2  2  2
+total:		11 13 15 17 19 21 23 25 27 29
+
+etc....
+
+So let's come up with a formula for the total number of digits.
+Let f(x) be the total number of digits, where x is that page number.
+f(x) =	x		} x < 10
+	9 + 2*(x-9)	} x < 100
+	189 + 3*(x-99)	} x < 1000
+	...(etc)
+
+We can assume that our book will not have more than 1000 pages, since we're going to have just over 1000 total digits. Therefore, let's try the third formula:
+
+f(x) = 189 + 3*(x-99) = 1,095
+3x-297 = 906
+x = 401
+
+So 401 pages should give you that number of digits total.
+
+
