@@ -1,0 +1,19 @@
+What is the next number in this sequence: 10, 9, 60, 90, 70, 66 ... ?
+
+Official answer:
+--Spell the numbers out:
+ten
+nine
+sixty
+ninety
+seventy
+sixtysix
+--So the next number should be +1 letter:
+ninetysix
+or
+onegoogol
+
+My answer (quicker answer):
+We trust that the interviewer is being honest about it being a sequence. Given a series of numbers, there's no way to be certain as to which sequence they represent - in this case, maybe the given numbers are just the first iteration; so the next number would follow the same rule as the first->second numbers. In this case, just subtract 1 from 10 to get 9; so subtract 1 from 66, and the next number might be 65.
+
+
