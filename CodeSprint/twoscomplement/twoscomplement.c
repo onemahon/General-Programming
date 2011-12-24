@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 	
 	int clock2 = clock();
 	
-	////
+	//*************************************
 	
 	int clock12 = clock();
 	
@@ -37,18 +37,31 @@ int main(int argc, char *argv[]){
 	int clock22 = clock();
 	
 	
+	//*************************************
+
+	
+	int clock13 = clock();
+	
+	i = 0;
+	while(i < 100){
+		findWeightInef(i);
+		i++;
+	}
+	
+	int clock23 = clock();
+		
 	printf("findOnesForNumber:	clock = %d\n", clock2-clock1);
 	printf("findWeight:		clock = %d\n", clock22-clock12);
+	printf("findWeightInef:		clock = %d\n", clock23-clock13);
 	
+	//	int i = 0;
+	//	while(i < 100){
+	//		printf("%d----	%d // %d\n", i, findOnesForNumber(i), findWeight(i));
+	//		
+	//		i++;	
+	//	}
+	//
 	
-	
-//	int i = 0;
-//	while(i < 100){
-//		printf("%d----	%d // %d\n", i, findOnesForNumber(i), findWeight(i));
-//		
-//		i++;	
-//	}
-//	
 	return 1;
 }
 
@@ -70,6 +83,18 @@ int findWeight(int i){
 	while(cp*2 < i) cp = cp*2;
 	//...
 	return 1 + findWeight(i-cp);
+}
+
+int findWeightInef(int i){
+	//simulate an action on every bit
+	int j = 0;
+	int k =0;
+	while (j<i) {
+		if (j == 5) {
+			k++;
+		}
+		j++;
+	}
 }
 
 
