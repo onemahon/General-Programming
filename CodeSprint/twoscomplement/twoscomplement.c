@@ -7,30 +7,69 @@
  DON'T loop through all the consecutive entries
  DON'T loop through every bit of each entry
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  */
 
 int findOnesForNumber(int i);
+int findWeight(int i);
 
 int main(int argc, char *argv[]){
 	
+	int clock1 = clock();
+	
 	int i = 0;
 	while(i < 100){
-		printf("%d----	%d\n", i, findOnesForNumber(i));
-		
+		findOnesForNumber(i);
 		i++;	
 	}
 	
+	int clock2 = clock();
+	
+	////
+	
+	int clock12 = clock();
+	
+	i = 0;
+	while(i < 100){
+		findWeight(i);
+		i++;	
+	}
+	
+	int clock22 = clock();
+	
+	
+	printf("findOnesForNumber:	clock = %d\n", clock2-clock1);
+	printf("findWeight:		clock = %d\n", clock22-clock12);
+	
+	
+	
+//	int i = 0;
+//	while(i < 100){
+//		printf("%d----	%d // %d\n", i, findOnesForNumber(i), findWeight(i));
+//		
+//		i++;	
+//	}
+//	
 	return 1;
+}
+
+
+
+int findWeight(int i){
+	if(i == 0) return 0;
+	if(i == 1) return 1;
+	//if i is a power of 2:
+	//reasoning taken from SO question:
+	//http://stackoverflow.com/questions/600293/how-to-check-if-a-number-is-a-power-of-2	
+	if ((i & (i - 1)) == 0) return 1;
+	
+	//for a number that's greater than 1 and not a power of 2:
+	
+	//cp = closest power of 2 below i:
+	int cp = 2;
+	//while the next power of 2 is less than
+	while(cp*2 < i) cp = cp*2;
+	//...
+	return 1 + findWeight(i-cp);
 }
 
 
