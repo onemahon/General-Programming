@@ -12,12 +12,12 @@
 int findOnesForNumber(int i);
 int findWeight(int i);
 int findWeightInef(int i);
-int findCumulativeWeight(int n);
+long long unsigned findCumulativeWeight(long unsigned n);
 
 int main(int argc, char *argv[]){
 	
 	long unsigned input = atol(argv[1]);
-	printf("ones up to %lu: %lu\n", input, findCumulativeWeight(input));
+	printf("ones up to %lu: %llu\n", input, findCumulativeWeight(input));
 	//
 //	int clock1 = clock();
 //	
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]){
  */
 
 
-long unsigned findCumulativeWeight(long unsigned n){
+long long unsigned findCumulativeWeight(long unsigned n){
 	
 	
 	/*
@@ -145,9 +145,9 @@ long unsigned findCumulativeWeight(long unsigned n){
 	if(n == 1) return 1;
 	if(n == 2) return 2;
 	
-	long unsigned total = 0;
+	long long unsigned total = 0;
 	long unsigned p = 1; //next lowest power of 2 under n
-	long unsigned i = 0;
+	int i = 0;
 	while (2*p <= n) {
 		i++;
 		p = 2*p;
