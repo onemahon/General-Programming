@@ -15,8 +15,10 @@ int main(){
 	while(runs--){
 		fscanf(stdin,"%ld %ld",&a, &b);
 		printf("%llu\n",findOnes(a,b));
+		fflush(stdout);
 	}
-//	
+
+	
 //	long input = atol(argv[1]);
 //	long input2 = atol(argv[2]);
 //	printf("weight between %ld and %ld: %llu\n", input, input2, findOnes(input, input2));
@@ -81,9 +83,11 @@ long long unsigned findOnes(long n, long m){
 	//the weight of a two's complement number is just the weight of it's opposite (the positive number) but with all the bits flipped and 1 added
 	//weight(negativenumber) = 32 - weight(positivenumber)
 	
+	if(n == m) return findOnesForNumber(n);
+	
 	if(n==0) return findCumulativeWeight(m);
 	if(m==0) return (32*(-n) - findCumulativeWeight(~n));
-	if(n>0)	return findCumulativeWeight(m) - findCumulativeWeight(n); //subtract weight of n from weight of m
+	if(n>0)	return findCumulativeWeight(m) - findCumulativeWeight(n) + findOnesForNumber(n); //subtract weight of n from weight of m
 	if(m>0)	return findCumulativeWeight(m) + (32*(-n) - findCumulativeWeight(~n)); //add the weight of m to the weight of n (as a two's complement representation)
 
 	//subtract weight of m from weight of n (each in two's complement representations)	
